@@ -1,0 +1,2 @@
+- name: Add entry to hosts
+  ansible.builtin.shell: echo "{{ my_ip }}  {{ my_hostname }}" >> /etc/hosts
