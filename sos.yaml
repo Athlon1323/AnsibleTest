@@ -1,0 +1,15 @@
+- name: Create a host record
+  hosts: all
+  vars_prompt:
+   - name: my_ip
+     prompt: Enter your ip address
+     private: no
+   - name: my_hostname
+     prompt: Enter your hostname
+     private: no
+  tasks:
+    - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+
+
+  roles:
+    - hosts_edit
